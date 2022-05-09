@@ -9,12 +9,31 @@ $(document).ready(function () {
         // Get nearby values of the textarea in JQuery
         var text = $(this).siblings(".textarea").val();
         var time = $(this).siblings(".hour").val();
-        // Save text in local storage
-        var tasks = [];
-        tasks [0] = time + text;
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+        // var tasks = [time + text];
+        // tasks [0] = time + text;
+        // var array = [9, 10, 11, 12, 1, 2, 3, 4, 5 ];
+        // localStorage.setItem('myArray', JSON.stringify(array));
+        localStorage.setItem(time, JSON.stringify(text));
         // var storedTasks = JSON.parse(localStorage.getItem("tasks"));
+        // storedTasks()
+        
     })
+
+    // Storage.prototype.getArray = function(arrayTasks) {
+    //     var taskArray = [];
+    //     var fetchArrayObject = this.getItem(arrayTasks);
+    //     if (typeof fetchArrayObject !== 'undefined') {
+    //       if (fetchArrayObject !== null) { taskArray = JSON.parse(fetchArrayObject); }
+    //     }
+    //     return taskArray;
+    //   }
+      
+    //   Storage.prototype.pushArrayItem = function(arrayTasks,arrayItem) {
+    //     var existingArray = this.getArray(arrayTasks);
+    //     existingArray.push(arrayItem);
+    //     this.setItem(arrayTasks,JSON.stringify(existingArray));
+    //   }
+      
    
     function timeTracker() {
         // get current number of hours.
@@ -45,15 +64,15 @@ $(document).ready(function () {
     }
 
     // Get item from local storage if any
-    $("#9am .textarea").val(localStorage.getItem("9am"));
-    $("#10am .textarea").val(localStorage.getItem("10am"));
-    $("#11am .textarea").val(localStorage.getItem("11am"));
-    $("#12pm .textarea").val(localStorage.getItem("12pm"));
-    $("#1pm .textarea").val(localStorage.getItem("1pm"));
-    $("#2pm .textarea").val(localStorage.getItem("2pm"));
-    $("#3pm .textarea").val(localStorage.getItem("3pm"));
-    $("#4pm .textarea").val(localStorage.getItem("4pm"));
-    $("#5pm .textarea").val(localStorage.getItem("5pm"));
+    // $("#9am .textarea").val(localStorage.getItem("9am"));
+    // $("#10am .textarea").val(localStorage.getItem("10am"));
+    // $("#11am .textarea").val(localStorage.getItem("11am"));
+    // $("#12pm .textarea").val(localStorage.getItem("12pm"));
+    // $("#1pm .textarea").val(localStorage.getItem("1pm"));
+    // $("#2pm .textarea").val(localStorage.getItem("2pm"));
+    // $("#3pm .textarea").val(localStorage.getItem("3pm"));
+    // $("#4pm .textarea").val(localStorage.getItem("4pm"));
+    // $("#5pm .textarea").val(localStorage.getItem("5pm"));
 
     timeTracker();
 
